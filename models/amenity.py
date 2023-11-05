@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """ holds class Amenity
-    ```````````````````
+    ````````````````````
 """
 import models
 from models.base_model import BaseModel, Base
@@ -12,7 +12,7 @@ from sqlalchemy.orm import relationship
 
 class Amenity(BaseModel, Base):
     """Representation of Amenity
-       *************************
+       `````````````````````````
     """
     if models.storage_t == 'db':
         __tablename__ = 'amenities'
@@ -22,6 +22,6 @@ class Amenity(BaseModel, Base):
 
     def __init__(self, *args, **kwargs):
         """initializes Amenity
-           ~~~~~~~~~~~~~~~~~~~~
+           ```````````````````
         """
         super().__init__(*args, **kwargs)

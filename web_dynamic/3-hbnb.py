@@ -5,6 +5,7 @@
 import os
 import uuid
 from flask import Flask, render_template
+
 from models import storage
 from models.amenity import Amenity
 from models.place import Place
@@ -22,7 +23,7 @@ def close_db(error):
     storage.close()
 
 
-@app.route('/1-hbnb', strict_slashes=False)
+@app.route('/3-hbnb', strict_slashes=False)
 def hbnb():
     """ HBNB is alive! """
     states = storage.all(State).values()
@@ -40,9 +41,8 @@ def hbnb():
         'places': places,
         'cache_id': uuid.uuid4()
     }
-    return render_template('1-hbnb.html', **ctxt)
+    return render_template('3-hbnb.html', **ctxt)
 
 
 if __name__ == "__main__":
-    """Main Function"""
     app.run(host='0.0.0.0', port=5000)

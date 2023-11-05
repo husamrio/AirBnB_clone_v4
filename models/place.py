@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """ holds class Place
-    *****************
+    ``````````````````
 """
 import models
 from models.base_model import BaseModel, Base
@@ -23,7 +23,7 @@ if models.storage_t == 'db':
 
 class Place(BaseModel, Base):
     """Representation of Place
-       ```````````````````````
+       ***********************
     """
     if models.storage_t == 'db':
         __tablename__ = 'places'
@@ -66,7 +66,7 @@ class Place(BaseModel, Base):
         @property
         def reviews(self):
             """getter attribute returns the list of Review instances
-               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+               `````````````````````````````````````````````````````
             """
             from models.review import Review
             review_list = []
@@ -78,9 +78,7 @@ class Place(BaseModel, Base):
 
         @property
         def amenities(self):
-            """getter attribute returns the list of Amenity instances
-               ******************************************************
-            """
+            """getter attribute returns the list of Amenity instances"""
             from models.amenity import Amenity
             amenity_list = []
             all_amenities = models.storage.all(Amenity)

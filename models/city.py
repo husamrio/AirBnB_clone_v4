@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """ holds class City
-    ****************
+    ````````````````
 """
 import models
 from models.base_model import BaseModel, Base
@@ -12,7 +12,7 @@ from sqlalchemy.orm import relationship
 
 class City(BaseModel, Base):
     """Representation of city
-       ``````````````````````
+       **********************
     """
     if models.storage_t == "db":
         __tablename__ = 'cities'

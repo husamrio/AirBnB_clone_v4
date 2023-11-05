@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Contains the FileStorage class
-******************************
+``````````````````````````````
 """
 
 import json
@@ -21,7 +21,7 @@ classes = {"Amenity": Amenity, "BaseModel": BaseModel, "City": City,
 
 class FileStorage:
     """serializes instances to a JSON file & deserializes back to instances
-       ````````````````````````````````````````````````````````````````````
+       ********************************************************************
     """
 
     # string - path to the JSON file
@@ -31,7 +31,7 @@ class FileStorage:
 
     def all(self, cls=None):
         """returns the dictionary __objects
-           ********************************
+           `````````````````````````````````
         """
         if cls is not None:
             new_dict = {}
@@ -43,7 +43,7 @@ class FileStorage:
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id
-           ```````````````````````````````````````````````````````
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         """
         if obj is not None:
             key = obj.__class__.__name__ + "." + obj.id
@@ -51,7 +51,7 @@ class FileStorage:
 
     def save(self):
         """serializes __objects to the JSON file (path: __file_path)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           `````````````````````````````````````````````````````````
         """
         json_objects = {}
         for key in self.__objects:
@@ -84,7 +84,7 @@ class FileStorage:
 
     def close(self):
         """call reload() method for deserializing the JSON file to objects
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+           ```````````````````````````````````````````````````````````````
         """
         self.reload()
 
